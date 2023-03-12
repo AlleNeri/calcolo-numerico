@@ -2,11 +2,11 @@
 Il condizionamento di una matrice ci dice quanto una perturbazione sui dati può influenzare l'errore sul risultato.
 
 # Errore
-L'errore è calcolato in norma 2 come: $$ \frac{ \| x^*-x \| }{ \| x \| } $$
+L'errore è calcolato in norma 2 come: $$\frac{ \| x^*-x \| }{ \| x \| }$$
 
 # Metodi iterativi
 I metodi iterativi stazionari, quali Jacobi e Gauss-Seidel, si basano sulla formula: $$x_k=Tx_{k-1}+c$$
-Per ottenere la matrice $T$, detta matrice di iterazione, e $c$ si scompone $A$ in:$$A=M-N$$
+Per ottenere la matrice $T$, detta matrice di iterazione, e $c$ si scompone $A$ in: $$A=M-N$$
 I metodi iterativi stazionari si differenziano per come ottengono le matrici $M$ e $N$. 
 Si parte dalla scomposizione della matrice data $A$ in: $$A=D-E-F$$
 Da questa scomposizione derivano le matrici di iterazione:
@@ -29,15 +29,24 @@ Risolvere un sistema $Ax=b$, con $A\in\mathbb{R}^{m,n}$, $m>n$, sovradimensionat
 In questo caso la soluzione del sistema si ottiene dall'equazione notrmale: $$A^TAx=A^Tb$$
 Altrimenti si può stabilire come soluzione del sistema il valore di $x$ che rende il vettore residuo minimo.
 Il valore residuo è la quantità: $$r=Ax-b$$
-Si ha quindi che la soluzione sarà: $$min_{x\in\mathbb{R}^n}\|r\|_2^2=min_{x\in\mathbb{R}^n}\|Ax-b\|_2^2$$
-Per ottenere la soluzione di norma minima si effettua la scomposizione della matrice $A$: $$A=U\Sigma V^T$$
+Si ha quindi che la soluzione sarà:
+$$min_{x\in\mathbb{R}^n}\|r\|_ 2^2=min_{x\in\mathbb{R}^n}\|Ax-b\|_2^2$$
+
+Per ottenere la soluzione di norma minima si effettua la scomposizione della matrice $A$: $$A=U \Sigma V^T$$
 - $\Sigma\in\mathbb{R}^{m,n}$ è la matrice che ha nelle prime $n$ righe una matrice diagonale i cui coefficenti sono $\sigma_1\geq\dots\geq\sigma_n\geq0$ i valori singolari di $A$ e nelle restanti righe vettori nulli.
 - $U\in\mathbb{R}^{m,m}$ è la matrice che ha per colonne i vettori singolari sinistri di $A$.
 - $V\in\mathbb{R}^{n,n}$ è la matrice che ha per colonne i vettori singolari destri di $A$.
 
-Da questa scomposizione si può ottenere la pseudoinversa della matrice $A$: $$A^+=U\Sigma^+V^T\ \ \text{con}\ \ \Sigma^+_{i,j}=\begin{cases}\frac{1}{\sigma_i} & \text{se}\ i=j\ \text{e}\ i\leq k\\ 0 & \text{altrimenti}\end{cases}$$
-Con essa si può risolvere il sistema come: $$x^*=A^+b$$
-Per poter iterare su questa formula si porta nella forma: $$x^*=\Sigma_{i=1}^{rank(A)}\frac{u_i^Tb}{\sigma_i}v_i$$
+Da questa scomposizione si può ottenere la pseudoinversa della matrice $A$:
+
+$$A^+=U \Sigma^+ V^T \text{ con } \Sigma^+_{i,j} = \begin{cases} \frac{1}{\sigma_i} & \text{ se } i=j \text{ e } i\leq k \\
+0 & \text{altrimenti} \end{cases}$$
+
+Con essa si può risolvere il sistema come:
+$$x^*=A^+b$$
+
+Per poter iterare su questa formula si porta nella forma:
+$$x^*=\Sigma_{i=1}^{rank(A)}\frac{u_i^Tb}{\sigma_i}v_i$$
 
 # Forma diadica
 Vedi [spiegazione scomposizione SVD](#scomposizione-svd).
@@ -81,10 +90,10 @@ Si nota che la derivata di $f(x)$ non può essere nulla per $x_k$: $$f(x_k)\neq 
 # Minimi di funzione
 Il probelma di minimizzazione non vincolata è quello di individuare il punto minimo di una funzione. In particolar modo abbiamo applicato questo problema alle funzioni, anche detti campi scalari, del tipo $f:\mathbb{R}^2\to\mathbb{R}$; la cui rappresentazione grafica è una superfice.
 Si distinguono diversi punti di minimo:
-- punti di minimo locale di $f$: $x^*$ tale che esista un $\varepsilon>0$ per cui $f(x^*)\leq f(x) \ \forall\  x$ tale che $\|x-x^*\|<\varepsilon$.
-- punti di minimo locale in senso stretto di $f$: $x^*$ tale che esista un $\varepsilon>0$ per cui $f(x^*)\ <\ f(x) \ \forall\  x$ tale che $\|x-x^*\|<\varepsilon$, $x\neq x^*$.
-- punti di minimo globale di $f$: $x^*$ tale per cui $f(x^*)\leq f(x) \ \forall\  x\in\mathbb{R}^n$.
-- punti di minimo globale in senso stretto di $f$: $x^*$ tale per cui $f(x^*)\ <\ f(x) \ \forall\  x\in\mathbb{R}^n$, $x\neq x^*$.
+- punti di minimo locale di $f$: $x^* $ tale che esista un $\varepsilon>0$ per cui $f(x^* )\leq f(x) \ \forall\  x$ tale che $\|x-x^* \|<\varepsilon$.
+- punti di minimo locale in senso stretto di $f$: $x^* $ tale che esista un $\varepsilon>0$ per cui $f(x^* )\ <\ f(x) \ \forall\  x$ tale che $\|x-x^* \|<\varepsilon$, $x\neq x^* $.
+- punti di minimo globale di $f$: $x^* $ tale per cui $f(x^* )\leq f(x) \ \forall\  x\in\mathbb{R}^n$.
+- punti di minimo globale in senso stretto di $f$: $x^* $ tale per cui $f(x^* )\ <\ f(x) \ \forall\  x\in\mathbb{R}^n$, $x\neq x^* $.
 
 Per risolvere questo tipo di problema esitono i metodi di discesa.
 I criteri di arresto di questi mietodi possono essere di diversa natura: raggiungimento della soluzione, con la dovuta tolleranza, o fallimento del metodo.
@@ -94,7 +103,8 @@ I criteri di arresto sono quindi:
 
 Questi metodi si dividono in 2 categorie: line search e trust region.
 La categoria line serach prevede la generazione di una successione del tipo: $$x_{k+1}=x_k+\alpha_k p_k\ \ \ \text{ dove }\ \ \ p_k\in\mathbb{R}^n,\alpha_k\in\mathbb{R}^+$$
-I parametri $p_k$ e $\alpha_k$ sono scelti per garantire il decremento della funzione obiettivo $f$: $$f(x_{k+1})<f(x_k)\ \forall\ k$$
+I parametri $p_k$ e $\alpha_k$ sono scelti per garantire il decremento della funzione obiettivo $f$:
+$$f(x_{k+1}) < f(x_k)\ \forall\ k$$
 Stabilire questi parametri è il modo in	cui di definisce la convergenza del metodo e la sua rapidità.
 In generale la scelta della direzione, quindi di $p_k$, determina la rapidità di convergenza; mentre la scelta del passo, quindi di $\alpha_k$, garantisce la convergenza.
 Anche se valori poco appropriati di $\alpha_k$ potrebbero determinare un rallentamento della convergenza del metodo.
