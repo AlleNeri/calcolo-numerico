@@ -14,13 +14,13 @@ Da questa scomposizione derivano le matrici di iterazione:
 - per Gauss-Seidel la matrice di iterazione è: $L_1=(D-E)^{-1}F$
 
 # Definizione dei metodi iterativi
-Vedi [spiegazione scomposizione dei metodi iterativi](#scomposizione-dei-metodi-iterativi).
+Vedi [spiegazione scomposizione dei metodi iterativi](#metodi-iterativi).
 Il metodo di Jacobi è definito se la matrice $D$ è non singolare, ovvero invertibile.
 Il metodo di Gauss-Seidel è definito se le matrice $D-E$ è non singolare, ovvero invertibile.
 Queste due condizioni sono entrambe soddisfatte se la diagonale principale della matrice $A$ non contiene $0$.
 
 # Convergenza dei metodi iterativi
-Vedi [spiegazione scomposizione dei metodi iterativi](#scomposizione-dei-metodi-iterativi).
+Vedi [spiegazione scomposizione dei metodi iterativi](#metodi-iterativi).
 I metodi iterativi convergono se e solo se la loro matrice di iterazione ha un raggio spettrale inferiore a 1.
 
 # Scomposizione SVD
